@@ -125,12 +125,11 @@ Try {
 		Show-InstallationProgress
 
 		## <Perform Pre-Installation tasks here>
-        
+
         ## Uninstall using RemoveMSI
         $exitCode = Remove-MSIApplications -Name "Adobe Acrobat DC" -PassThru
         If (($exitCode.ExitCode -ne "0") -and ($mainExitCode -ne "3010")) { $mainExitCode = $exitCode.ExitCode }
 
-	
 		##*===============================================
 		##* INSTALLATION
 		##*===============================================
