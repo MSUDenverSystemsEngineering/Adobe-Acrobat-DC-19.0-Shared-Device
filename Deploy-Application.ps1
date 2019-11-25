@@ -125,8 +125,9 @@ Try {
 		Show-InstallationProgress
 
 		## <Perform Pre-Installation tasks here>
-		$exitCode = Remove-MSIApplications -Name "Adobe Acrobat DC" -PassThru
-		If (($exitCode.ExitCode -ne "0") -and ($mainExitCode -ne "3010")) { $mainExitCode = $exitCode.ExitCode }
+	  Remove-MSIApplications -Name "Adobe Acrobat DC"
+		Remove-MSIApplications -Name "Adobe Acrobat XI"
+
 
 		##*===============================================
 		##* INSTALLATION
